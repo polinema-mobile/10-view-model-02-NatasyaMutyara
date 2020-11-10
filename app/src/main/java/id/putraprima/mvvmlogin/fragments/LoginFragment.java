@@ -28,7 +28,7 @@ public class LoginFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         FragmentLoginBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false);
-        LoginFragmentViewModelFactory viewModelFactory = new LoginFragmentViewModelFactory(new User("raihanrach@gmail.com", "raihan"));
+        LoginFragmentViewModelFactory viewModelFactory = new LoginFragmentViewModelFactory(new User("natasyamutyara@gmail.com", "mutyara2108"));
         LoginFragmentViewModel viewModel = new ViewModelProvider(this, viewModelFactory).get(LoginFragmentViewModel.class);
         binding.setLoginViewModel(viewModel);
         binding.setLifecycleOwner(this);
@@ -37,9 +37,9 @@ public class LoginFragment extends Fragment {
         binding.btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (viewModel.login()){
+
                     Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_homeFragment);
-                } else {
+                } gitelse {
                     binding.editTextEmail.setError("Email Tidak Sesuai dengan initial value");
                     binding.editTextPassword.setError("Password tidak sesuai dengan initial value");
                 }
